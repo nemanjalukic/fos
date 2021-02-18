@@ -17,6 +17,7 @@ const routes: Routes = [
 {path:'home', component:HomeComponent},
 {path:'cart', component:CartComponent},
 {path: 'product/:id', component:ItemDetailComponent},
+{path:'category/:id' , component:HomeComponent},
 {path: 'addFoodItem', component:NewFoodItemComponent, canActivate: [AuthGuard],
 data: {roles: [Role.Restaurant]}},
 {path: 'foodItems', component:RestaurantItemsComponent, canActivate: [AuthGuard],

@@ -12,10 +12,10 @@ export class HomeComponent implements OnInit {
     gridColumns = 5;
     title: string;
     page: any;
-    breakpoint: number = 3;  //to adjust to screen
+    breakpoint: number = 3; 
     current=0;
     length: number = 0;
-    pageSize: number = 5;  //displaying three cards each row
+    pageSize: number = 5; 
     pageSizeOptions: number[] = [5, 10, 15, 25];
   
   

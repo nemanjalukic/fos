@@ -45,7 +45,7 @@
   
 
           <mat-form-field class="example-full-width">
-            <mat-label>Choose role</mat-label>
+            <mat-label>Choose category</mat-label>
             <mat-select  [(ngModel)]="item.category"  required #category="ngModel" name="category" required >
               <mat-option [value]=category *ngFor="let category of categories">{{category.category}}
               </mat-option>

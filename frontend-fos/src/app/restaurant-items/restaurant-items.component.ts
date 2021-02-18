@@ -18,8 +18,6 @@ export class RestaurantItemsComponent implements OnInit{
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private productService: ProductService) {
-    
-
   }
   ngOnInit(): void {
     this.productService.getRestaurantItems().subscribe(data=>{
