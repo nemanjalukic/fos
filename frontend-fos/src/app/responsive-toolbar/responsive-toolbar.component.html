@@ -7,7 +7,7 @@
         <mat-icon class="mr">account_circle</mat-icon>
         {{name}} 
     </button>
-    <button *ngIf="!currentUser || currentUser.role == 'ROLE_RESTAURANT'" mat-button [fxShow]='true' [fxShow.xs]='false' [fxShow.sm]='false' routerLink="/foodItems"> 
+    <button *ngIf="isLoggedIn && currentUser.role == 'ROLE_RESTAURANT'" mat-button [fxShow]='true' [fxShow.xs]='false' [fxShow.sm]='false' routerLink="/foodItems"> 
         <mat-icon class="mr">fastfood</mat-icon>
         Food items
     </button>
@@ -45,7 +45,7 @@
                 </button>
                 <mat-divider></mat-divider>
             </div>
-            <div *ngIf="!currentUser || currentUser.role == 'ROLE_RESTAURANT'">
+            <div *ngIf="isLoggedIn && currentUser.role == 'ROLE_RESTAURANT'">
                 <button mat-menu-item [fxShow]='false' [fxShow.xs]='true' [fxShow.sm]='true' routerLink="/foodItems"> 
                     <mat-icon class="mr">fastfood</mat-icon>
                     Food items
