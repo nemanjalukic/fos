@@ -12,6 +12,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import com.nl.fos.model.User;
+import com.nl.fos.security.JWT.JwtProvider;
 import com.nl.fos.security.JWT.JwtUtils;
 import com.nl.fos.security.services.UserDetailsImpl;
 import com.nl.fos.service.UserService;

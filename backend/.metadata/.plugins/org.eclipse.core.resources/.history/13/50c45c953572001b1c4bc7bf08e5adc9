@@ -20,8 +20,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Created By Zhu Lin on 1/1/2019.
+ */
 @Component
 public class JwtFilter extends OncePerRequestFilter {
+    /*@Autowired
+    private JwtProvider jwtProvider;*/
+    @Autowired
+    private UserService userService;
     @Autowired
 	private JwtUtils jwtProvider;
 
@@ -34,7 +41,15 @@ public class JwtFilter extends OncePerRequestFilter {
         if (jwt != null && jwtProvider.validate(jwt)) {
             try {
                 String userAccount = jwtProvider.getUserAccount(jwt);
+                //User user = userService.findOne(userAccount);
                 UserDetails userDetails = userDetailsService.loadUserByUsername(userAccount);
+                // pwd not necessary
+                // if jwt ok, then authenticate
+                /*SimpleGrantedAuthority sga = new SimpleGrantedAuthority(user.getRole().getName().name());
+                ArrayList<SimpleGrantedAuthority> list = new ArrayList<>();
+                list.add(sga);
+                UsernamePasswordAuthenticationToken auth
+                        = new UsernamePasswordAuthenticationToken(user.getEmail(), null, list);*/
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
 						userDetails, null, userDetails.getAuthorities());
 				authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
