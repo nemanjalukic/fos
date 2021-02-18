@@ -37,6 +37,15 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
     private JwtEntryPoint accessDenyHandler;
 	@Autowired
 	UserDetailsServiceImpl userDetailsService;
+    
+   /* @Bean
+    public Docket api() { 
+        return new Docket(DocumentationType.SWAGGER_2)  
+          .select()                                  
+          .apis(RequestHandlerSelectors.any())              
+          .paths(PathSelectors.any())                          
+          .build();                                           
+    }*/
 
 
     @Override
